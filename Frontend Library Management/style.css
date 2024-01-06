@@ -1,0 +1,53 @@
+html {
+    height: 100%;
+    width: 100%;
+  }
+  
+  .form {
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #ccc;
+    margin: 0 auto;
+    /* Center the form */
+    width: 50%;
+    /* Set the width of the form */
+    text-align: center;
+  }
+  
+  input {
+    /* display: block; */
+    margin: 10px auto;
+    padding: 10px;
+    width: 80%;
+    /* Set the width of the input fields */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    /* Include padding and border in the width */
+  }
+  
+  label {
+    display: inline;
+    /* text-align: center; */
+    /* Center align the labels */
+    margin: 2px auto;
+    font-weight: bold;
+    /* Make the labels bold */
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    /* text-align: center; */
+    font-size: 16px;
+  }
+
+  ul li {
+    margin-bottom: 1rem; /* Adjust spacing as needed */
+  }
+  
