@@ -1,26 +1,29 @@
-const URL =
-  "https://crudcrud.com/api/dbbd1fca214547688740780b24f48758/bookData";
+// const URL =
+//   "https://crudcrud.com/api/dbbd1fca214547688740780b24f48758/bookData";
 
 // function to display user data
 
 const displayData = async () => {
   await axios
-    // .get("http://localhost:4000/book/get-books")
-    .get(URL)
+    .get("http://localhost:4000/book/get-books")
     .then((res) => {
-      const userDetails = res.data;
-      console.log(userDetails);
+      const bookDetails = res.data;
+      console.log(bookDetails);
 
       const ul = document.getElementById("bookData");
       ul.textContent = "";
 
-      userDetails.forEach((data, index) => {
+      bookDetails.forEach((data, index) => {
+        const currentTime = new Date();
+        const returnTime = new Date(currentTime.getTime() + 3600000);
         const li = document.createElement("li");
-        li.textContent = `Book Name: ${data.name}`;
+        li.textContent = `Book Name: ${data.name} - Current Fine: ${
+          data.currentFine
+        } - Book Rented Time: ${currentTime.toLocaleDateString()} - ${currentTime.toLocaleTimeString()} - Book Return Time: ${returnTime.toLocaleDateString()} - ${returnTime.toLocaleTimeString()}   `;
 
         const removeButton = document.createElement("button");
         removeButton.textContent = "Return Book";
-        removeButton.onclick = () => deleteData(data._id); // rectify the id
+        removeButton.onclick = () => deleteData(data.id);
         li.appendChild(removeButton);
         ul.appendChild(li);
       });
@@ -35,6 +38,7 @@ const handleSubmit = async (e) => {
   e.preventDefault();
 
   let currentFine = 0;
+
   const newData = {
     name: document.getElementById("name").value,
     currentFine: currentFine,
@@ -42,7 +46,7 @@ const handleSubmit = async (e) => {
   console.log(newData);
 
   await axios
-    .post(URL, newData)
+    .post("http://localhost:4000/book/add-book", newData)
     .then((res) => {
       displayData();
       // console.log(newData);
@@ -59,18 +63,17 @@ const handleSubmit = async (e) => {
 const ul = document.getElementById("removedData");
 ul.textContent = "";
 const deleteData = async (id) => {
-  await axios.get(URL + "/" + `${id}`).then((res) => {
+  await axios.get(`http://localhost:4000/book/get-book/${id}`).then((res) => {
     const bookDetails = res.data;
     // console.log(bookDetails.name);
 
     const li = document.createElement("li");
-    li.textContent = `Book Name: ${bookDetails.name} - Current Fine: ${bookDetails.currentFine}`;
+    li.textContent = `Book Name: ${bookDetails.name} - Current Fine: ${bookDetails.currentFine} - Book Rented Time & Date: ${bookDetails.createdAt}`;
     ul.appendChild(li);
   });
 
   axios
-    // .delete(`http://localhost:4000/book/delete-book/${id}`)
-    .delete(URL + "/" + `${id}`)
+    .delete(`http://localhost:4000/book/delete-book/${id}`)
     .then((res) => {
       console.log(res.data);
       displayData();
