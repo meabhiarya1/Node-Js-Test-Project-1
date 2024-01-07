@@ -51,3 +51,36 @@ html {
     margin-bottom: 1rem; /* Adjust spacing as needed */
   }
   
+
+  /* General list item styling */
+ul li {
+  list-style-type: none; /* Remove default bullet points */
+  padding: 10px 15px; /* Add some padding */
+  border-bottom: 1px solid #eee; /* Add a subtle bottom border */
+}
+
+/* Styling for the first list item in each group */
+ul li:first-child {
+  border-top: 1px solid #eee; /* Add a top border for visual separation */
+}
+
+/* Styling for list items with the "Return Book" button */
+ul li button {
+  float: right; /* Position the button to the right */
+  margin-top: -5px; /* Adjust vertical position for better alignment */
+  background-color: #007bff; /* Blue background for visual emphasis */
+  color: white; /* White text for contrast */
+  border: none; /* Remove default button border */
+  padding: 5px 10px; /* Adjust button padding */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Indicate interactivity */
+}
+
+/* Styling for hover effects on list items and buttons */
+ul li:hover {
+  background-color: #f5f5f5; /* Light gray background on hover */
+}
+
+ul li button:hover {
+  background-color: #0062cc; /* Darker blue on hover */
+}
