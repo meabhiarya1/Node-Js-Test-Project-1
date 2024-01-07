@@ -13,6 +13,8 @@ const Book = sequelize.define("books", {
   name: Sequelize.STRING,
 
   currentFine: Sequelize.INTEGER,
+
+  bookValue: Sequelize.INTEGER,
 });
 
 module.exports = Book;

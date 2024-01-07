@@ -19,10 +19,10 @@ exports.getBook = async (req, res, next) => {
 };
 
 exports.addBook = async (req, res, next) => {
-  const { name, currentFine } = req.body;
+  const { name, currentFine, bookValue } = req.body;
 
   try {
-    const book = await Book.create({ name, currentFine });
+    const book = await Book.create({ name, currentFine, bookValue });
     console.log("Book added:", book);
     res.json(book);
   } catch (err) {
