@@ -14,12 +14,10 @@ const displayData = async () => {
       ul.textContent = "";
 
       bookDetails.forEach((data, index) => {
-        const currentTime = new Date();
-        const returnTime = new Date(currentTime.getTime() + 3600000);
+        const formattedDate = new Date(data.createdAt).toLocaleDateString();
+        const formattedTime = new Date(data.createdAt).toLocaleTimeString();
         const li = document.createElement("li");
-        li.textContent = `Book Name: ${data.name} - Current Fine: ${
-          data.currentFine
-        } - Book Rented Time: ${currentTime.toLocaleDateString()} - ${currentTime.toLocaleTimeString()} - Book Return Time: ${returnTime.toLocaleDateString()} - ${returnTime.toLocaleTimeString()}   `;
+        li.textContent = `Book Name: ${data.name} - Current Fine: ${data.currentFine} - Book Rent Time & Date: ${formattedTime} - ${formattedDate}   `;
 
         const removeButton = document.createElement("button");
         removeButton.textContent = "Return Book";
@@ -66,9 +64,11 @@ const deleteData = async (id) => {
   await axios.get(`http://localhost:4000/book/get-book/${id}`).then((res) => {
     const bookDetails = res.data;
     // console.log(bookDetails.name);
-
+    const returnTime = new Date();
     const li = document.createElement("li");
-    li.textContent = `Book Name: ${bookDetails.name} - Current Fine: ${bookDetails.currentFine} - Book Rented Time & Date: ${bookDetails.createdAt}`;
+    li.textContent = `Book Name: ${bookDetails.name} - Current Fine: ${
+      bookDetails.currentFine
+    } - Book Return Time & Date: ${returnTime.toLocaleDateString()} ${returnTime.toLocaleTimeString()} `;
     ul.appendChild(li);
   });
 
