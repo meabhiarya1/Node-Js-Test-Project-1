@@ -1,6 +1,3 @@
-// const URL =
-//   "https://crudcrud.com/api/dbbd1fca214547688740780b24f48758/bookData";
-
 // function to display user data
 
 const displayData = async () => {
@@ -88,6 +85,8 @@ const addData = async (data) => {
     });
 };
 
+// function to get time difference
+
 const getTimeAgo = (createdAt) => {
   const localTime = new Date(); /* string to date object*/
   const createdDate = new Date(createdAt);
@@ -103,6 +102,8 @@ const getTimeAgo = (createdAt) => {
     return hours;
   }
 };
+
+// function to payfine book data
 
 const payFine = async (data) => {
   // console.log(data);
