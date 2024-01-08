@@ -26,12 +26,18 @@
     <h4>Book Rented:</h4>
     <hr />
     <br />
-    <ul id="bookData" >
-
-    </ul><br /><br>
-    <hr>
+    <ul id="bookData"></ul>
+    <br /><br />
+    <hr />
     <h4>Book Returned:</h4>
     <ul id="removedData"></ul>
+
+    <div id="popup" class="hidden">
+      <h2>Pay Fine</h2>
+      <input type="text" id="fine-amount" value="" disabled />
+      <button id="pay-fine">Pay Fine</button>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>

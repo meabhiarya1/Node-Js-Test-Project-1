@@ -1,58 +1,57 @@
 html {
-    height: 100%;
-    width: 100%;
-  }
-  
-  .form {
-    background-color: #f2f2f2;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px #ccc;
-    margin: 0 auto;
-    /* Center the form */
-    width: 50%;
-    /* Set the width of the form */
-    text-align: center;
-  }
-  
-  input {
-    /* display: block; */
-    margin: 10px auto;
-    padding: 10px;
-    width: 80%;
-    /* Set the width of the input fields */
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-    /* Include padding and border in the width */
-  }
-  
-  label {
-    display: inline;
-    /* text-align: center; */
-    /* Center align the labels */
-    margin: 2px auto;
-    font-weight: bold;
-    /* Make the labels bold */
-  }
-  
-  button {
-    padding: 10px 20px;
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    /* text-align: center; */
-    font-size: 16px;
-  }
+  height: 100%;
+  width: 100%;
+}
 
-  ul li {
-    margin-bottom: 1rem; /* Adjust spacing as needed */
-  }
-  
+.form {
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px #ccc;
+  margin: 0 auto;
+  /* Center the form */
+  width: 50%;
+  /* Set the width of the form */
+  text-align: center;
+}
 
-  /* General list item styling */
+input {
+  /* display: block; */
+  margin: 10px auto;
+  padding: 10px;
+  width: 80%;
+  /* Set the width of the input fields */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  /* Include padding and border in the width */
+}
+
+label {
+  display: inline;
+  /* text-align: center; */
+  /* Center align the labels */
+  margin: 2px auto;
+  font-weight: bold;
+  /* Make the labels bold */
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  /* text-align: center; */
+  font-size: 16px;
+}
+
+ul li {
+  margin-bottom: 1rem; /* Adjust spacing as needed */
+}
+
+/* General list item styling */
 ul li {
   list-style-type: none; /* Remove default bullet points */
   padding: 10px 15px; /* Add some padding */
@@ -83,4 +82,58 @@ ul li:hover {
 
 ul li button:hover {
   background-color: #0062cc; /* Darker blue on hover */
+}
+
+/* General styling for all unordered lists */
+ul {
+  list-style: none; /* Remove default bullet points */
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+}
+
+/* General styling for all list items */
+li {
+  padding: 10px 15px; /* Add padding for content */
+  border-bottom: 1px solid #eee; /* Separate items with a subtle border */
+}
+
+/* Styling for the first list item in each group */
+li:first-child {
+  border-top: 1px solid #eee; /* Add a top border for visual grouping */
+}
+
+/* Styling for list items with buttons */
+li button {
+  float: right; /* Position the button to the right */
+  margin-top: -5px; /* Adjust vertical alignment */
+  background-color: #007bff; /* Blue background for emphasis */
+  color: white; /* White text for contrast */
+  border: none; /* Remove default border */
+  padding: 5px 10px; /* Adjust button padding */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Indicate interactivity */
+}
+
+/* Hover effects for list items and buttons */
+li:hover {
+  background-color: #f5f5f5; /* Light gray background on hover */
+}
+
+li button:hover {
+  background-color: #0062cc; /* Darker blue on hover */
+}
+
+.hidden {
+  display: none;
+}
+
+#popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
 }
