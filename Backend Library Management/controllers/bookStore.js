@@ -26,7 +26,7 @@ exports.addBook = async (req, res, next) => {
     console.log("Book added:", book);
     res.json(book);
   } catch (err) {
-    console.error(err);
+    console.error(err)
   }
 };
 
